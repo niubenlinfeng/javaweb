@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+	"-//mybatis.org//Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.hzyc.niuben.mapper.DakaMapper">
+	<select id="selectDakaALLText" resultType="DakaBean">
+		select * from daka order by dakaId desc
+	</select>
+	<insert id="updateDaka" parameterType="DakaBean">
+	insert into daka (dakaState,dakaimage,dakacanlei,dakashicaiyuliang,dakabuzhou,daka_username,daka_time,daka_pingjia) values(#{dakaState},#{dakaimage},#{dakacanlei},#{dakashicaiyuliang},#{dakabuzhou},#{daka_username},#{daka_time},#{daka_pingjia})
+	</insert>
+	<select id="selectDaka" parameterType="String" resultType="DakaBean">
+		select * from daka where daka_username=#{username} order by dakaId desc
+	</select>
+	<select id="selectDakaALLTextByid" parameterType="int" resultType="DakaBean">
+		select * from daka where dakaId=#{id}
+	</select>
+	<update id="updateDakaOne" parameterType="DakaBean">
+	update daka set daka_pingjia=#{daka_pingjia} where daka_username=#{daka_username} and daka_time=#{daka_time}
+	</update>
+	</mapper>

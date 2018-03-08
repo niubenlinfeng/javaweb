@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+	"-//mybatis.org//Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.hzyc.niuben.mapper.UserMapper">
+	<select id="selectALL" resultType="UserBean">
+		select * from user
+	</select>
+	<select id="login_app" parameterType="String" resultType="UserBean">
+		select * from user where userName = #{userName}
+	</select>
+	<insert id="register_app" parameterType="UserBean">
+	insert into user (userName,password,userTrueName,userImage,userSex,userTelphone,userWeight,userHeight,userBirth,userQQ,userWeiXin,userWeibo,userState) 
+	values(#{userName},#{password},#{userTrueName},#{userImage},#{userSex},#{userTelphone},#{userWeight},#{userHeight},#{userBirth},#{userQQ},#{userWeiXin},#{userWeibo},#{userState})
+	</insert>
+	<update id="updateUser" parameterType="UserBean">
+	update user set userTrueName=#{userTrueName},userImage=#{userImage},userSex=#{userSex},userTelphone=#{userTelphone},userWeight=#{userWeight},userHeight=#{userHeight},userQQ=#{userQQ},userWeiXin=#{userWeiXin} where userName=#{userName}
+	</update>
+	<select id="selectUser" parameterType="String" resultType="UserBean">
+	select * from user where userName = #{userName}
+	</select>
+	</mapper>

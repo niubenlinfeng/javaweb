@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="jd_health_back"
+  id="myeclipse.1515951630590"
+  context-root="/jd_health_back"
+  j2ee-spec="5.0"
+  archive="jd_health_back.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

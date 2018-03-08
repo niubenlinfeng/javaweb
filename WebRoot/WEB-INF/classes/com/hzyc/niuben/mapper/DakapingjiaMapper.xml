@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+	"-//mybatis.org//Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.hzyc.niuben.mapper.DakapingjiaMapper">
+	
+	<insert id="updatepingjia" parameterType="DakapingjiaBean">
+	insert into dakapingjia (friUsername,friTime,fridakaleibie,shicaiyuliangNengliang,yingyangjisuan,yinshijianyi,chanpintuijian,zongnengliang) values(#{friUsername},#{friTime},#{fridakaleibie},#{shicaiyuliangNengliang},#{yingyangjisuan},#{yinshijianyi},#{chanpintuijian},#{zongnengliang})
+	</insert>
+	<select id="selectDakapingjia" parameterType="DakapingjiaBean" resultType="DakapingjiaBean">
+	select * from dakapingjia where friUsername=#{friUsername} and friTime=#{friTime}
+	</select>
+	</mapper>
